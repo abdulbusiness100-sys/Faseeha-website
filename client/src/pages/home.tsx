@@ -69,6 +69,24 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Introduction Section */}
+      <section className="py-20 bg-white relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight">Welcome to Faseeha Institute</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed font-light">
+              Faseeha Institute is a women-only online academy dedicated to empowering Muslim sisters with authentic Qur'an and Arabic education. Our mission is to make Islamic knowledge accessible, engaging, and transformative.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed font-light">
+              With native Arab female instructors and a carefully structured curriculum, we create a supportive learning environment where every student can thrive. Whether you're starting from scratch or advancing your skills, we're here to guide you on your spiritual and academic journey.
+            </p>
+            <div className="pt-4">
+              <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Who This Is For */}
       <section className="py-20 bg-background relative">
         <div className="container mx-auto px-4">
