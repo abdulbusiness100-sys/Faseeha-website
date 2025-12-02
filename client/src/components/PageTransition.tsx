@@ -17,7 +17,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
     >
       {/* Faded Background with Logo and Arabic Text */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-[0.08]">
+        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-20">
           <img 
             src={LOGO_PATH} 
             alt="Background Logo" 
