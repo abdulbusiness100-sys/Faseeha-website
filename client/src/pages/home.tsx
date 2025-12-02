@@ -5,7 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Check, Star, PlayCircle } from "lucide-react";
 
-// Image Paths
+// Logo & Image Paths
+const LOGO_PATH = "/Logo  (1)_1764706801942.jpeg";
 const IMG_HERO_BG = "/Screenshot 2025-01-04 at 19.29.25_1764706859835.png";
 const IMG_QURAN_SECTION = "/Screenshot 2025-01-22 at 16.07.01_1764706859836.png";
 const IMG_ARABIC_SECTION = "/Screenshot 2025-01-04 at 19.58.00_1764706859836.png";
