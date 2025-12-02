@@ -1,0 +1,473 @@
+Below is a practical build guide: what to include, where it should live in the layout, and how it should differ from your current Faseeha site, all geared to maximising organic visibility and conversion.
+
+I’ll assume a similar overall structure to your current site:
+
+Home (/)
+Qur’an Programme (/quran-programme)
+Arabic Programme (/arabic-programme)
+Pricing/Enrol (/pricing)
+About
+Testimonials / Results
+FAQ
+(Optional later: Blog)
+1. Global decisions that should go into your codebase
+1.1 <head> section for every page
+What to include and where
+
+In your main layout component (e.g. Layout.jsx or inside each page if using Next.js app router):
+
+html
+Copy
+<head>
+  <title>Online Quran & Arabic Classes for Women | Faseeha Institute</title>
+  <meta name="description"
+        content="Faseeha Institute offers online Quran and Arabic programmes for women with native Arab female teachers. Learn tajweed, hifdh and Arabic from anywhere in the world." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.faseehainstitute.com/" />
+  <!-- Open Graph for IG/TikTok shares -->
+  <meta property="og:title" content="Online Quran & Arabic Classes for Women | Faseeha Institute" />
+  <meta property="og:description"
+        content="Structured online Quran & Arabic programmes for sisters, taught by native Arab female teachers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.faseehainstitute.com/" />
+  <meta property="og:image" content="URL_TO_HERO_IMAGE.jpg" />
+</head>
+Key improvements vs current site
+
+Your current meta titles/descriptions are quite generic.
+Above, we front‑load the main keyword: “online Quran & Arabic classes for women” and “native Arab female teachers”.
+For each page, adjust title, description, and canonical to target one main search intent (examples in later sections).
+2. Home page: what to change and exactly where
+Think of Home as a landing page for first‑time visitors from Google or socials. The current home is visually nice but not explicit enough about what you offer and for whom.
+
+2.1 Hero section (<header> at top of page)
+Where in code: First section in index.jsx or Home component.
+
+What to include:
+
+jsx
+Copy
+<section id="hero" className="...">
+  <h1>Online Qur’an & Arabic Programmes for Women</h1>
+  <p>
+    Faseeha Institute is a women-only online institute with native Arab female teachers,
+    structured levels and personalised goals — so you can recite, memorise and
+    understand the Qur’an with confidence.
+  </p>
+  <div className="hero-ctas">
+    <a href="/quran-programme" className="btn-primary">Explore Qur’an Programme</a>
+    <a href="/arabic-programme" className="btn-secondary">Explore Arabic Programme</a>
+  </div>
+  <p className="hero-reassurance">
+    Serving sisters worldwide · All time zones · From complete beginners to advanced students
+  </p>
+</section>
+SEO / conversion improvements vs current
+
+Current hero is more aesthetic but doesn’t clearly say “online Quran & Arabic classes for women” in the main H1.
+This revised hero uses your main keyword in the H1 and first paragraph, which is crucial for ranking.
+Reassurance line adds “all time zones” and “women‑only”, mirroring FAQ questions people actually Google.
+2.2 “Who this is for” section (directly under hero)
+Where: <section id="who-for"> right after hero.
+
+What to include:
+
+Three cards with explicit benefit‑led copy:
+
+Card 1 – “Starting from zero”
+Card 2 – “Improving tajweed & fluency”
+Card 3 – “Learning Arabic to understand the Qur’an”
+Example:
+
+jsx
+Copy
+<section id="who-for">
+  <h2>Who We Serve</h2>
+  <div className="grid">
+    <article>
+      <h3>Complete Beginners</h3>
+      <p>Start from the Arabic alphabet and basic Qur’an reading in a calm, shame‑free environment designed for adult sisters.</p>
+    </article>
+    <article>
+      <h3>Sisters Improving Tajweed & Fluency</h3>
+      <p>Fix long‑standing mistakes, build smooth Qur’an recitation and work towards confident daily reading.</p>
+    </article>
+    <article>
+      <h3>Women Learning Arabic for the Qur’an</h3>
+      <p>Follow a clear 4‑level Arabic curriculum that takes you from letters to reading stories of the Prophets in Arabic.</p>
+    </article>
+  </div>
+</section>
+Improvement
+
+Your current homepage jumps into copy about “programmes” but doesn’t segment visitors.
+This section answers “Is this for someone like me?” – which reduces bounce and improves conversions, helping SEO indirectly.
+2.3 “Our Programmes” overview section
+Where: After “Who We Serve”.
+
+Two large cards linking to dedicated pages.
+
+jsx
+Copy
+<section id="programmes">
+  <h2>Our Online Programmes</h2>
+
+  <div className="grid">
+    <article>
+      <h3>Qur’an Programme</h3>
+      <p>
+        Flexible online Qur’an classes for women covering tajweed, reading fluency and hifdh / revision.
+        Choose one focus area or combine them in a personalised plan.
+      </p>
+      <ul>
+        <li>Tajweed – Qur’anic reading mastery</li>
+        <li>Reading fluency from the Mushaf</li>
+        <li>Hifdh & structured revision plans</li>
+      </ul>
+      <a href="/quran-programme" className="text-link">View Qur’an Programme →</a>
+    </article>
+
+    <article>
+      <h3>Arabic Programme</h3>
+      <p>
+        A 4‑level Arabic course for sisters that starts from absolute foundations and builds to reading
+        stories of the Prophets in Arabic with understanding.
+      </p>
+      <ul>
+        <li>Level 1 – Alphabet, reading & pronunciation</li>
+        <li>Level 2 – Core everyday & worship language</li>
+        <li>Level 3 – Stories of the Prophets</li>
+        <li>Level 4 – (Qur’anic Texts / Advanced, if you have it)</li>
+      </ul>
+      <a href="/arabic-programme" className="text-link">View Arabic Programme →</a>
+    </article>
+  </div>
+</section>
+Improvement
+
+Compared to the current site, you’re tying each card to clear SEO phrases (“online Qur’an classes for women”, “Arabic course for sisters”, levels, etc.).
+This also clarifies structure for Google’s understanding of your content.
+2.4 “How it works” process
+Where: Middle of the home page, after programmes.
+
+jsx
+Copy
+<section id="how-it-works">
+  <h2>How Learning with Faseeha Works</h2>
+  <ol className="steps">
+    <li>
+      <h3>1. Enrol Online</h3>
+      <p>Choose the Qur’an or Arabic programme and submit your details. We accommodate all time zones.</p>
+    </li>
+    <li>
+      <h3>2. Assessment Lesson</h3>
+      <p>Your female teacher assesses your current level and clarifies your Qur’an or Arabic goals.</p>
+    </li>
+    <li>
+      <h3>3. Personalised Plan</h3>
+      <p>We agree on a schedule, quarterly goals and whether you’ll focus on tajweed, fluency, hifdh or Arabic levels.</p>
+    </li>
+    <li>
+      <h3>4. Ongoing Support & Tracking</h3>
+      <p>Track your progress via shared tracker and regular check‑ins on Slack/WhatsApp.</p>
+    </li>
+  </ol>
+</section>
+Improvement
+
+Competitor sites that rank well all have a “how it works” section (Riwaq and Hidayah).
+Your current site under‑explains the flow; this addition addresses a big conversion blocker.
+2.5 Social proof on Home
+Where: After “How it works”.
+
+Include at least:
+
+A headline that uses your keyword + “testimonials”
+3–6 quotes, each tagged with programme type.
+jsx
+Copy
+<section id="testimonials-preview">
+  <h2>What Our Students Say</h2>
+  <div className="grid">
+    <figure>
+      <blockquote>“I started not knowing the Arabic letters. Within months I could read the Mushaf and I’m now memorising Juz ‘Amma.”</blockquote>
+      <figcaption>Qur’an Foundations Student</figcaption>
+    </figure>
+    <!-- more -->
+  </div>
+  <a href="/testimonials" className="text-link">Read more student stories →</a>
+</section>
+Improvement
+
+You already have strong testimonials (from your screenshots – these documents can only be used in code execution).
+What’s missing is pulling them onto the home page with keyworded headings to help search queries like “Faseeha Institute reviews”.
+2.6 FAQ snippet on Home
+Where: Near the bottom, before final CTA.
+
+jsx
+Copy
+<section id="faq-preview">
+  <h2>Frequently Asked Questions</h2>
+  <details>
+    <summary>Do you offer trial lessons?</summary>
+    <p>No, we don’t offer trials. Instead, your first lesson is a full assessment where your teacher evaluates your level, sets goals with you and explains how the programme will work.</p>
+  </details>
+  <details>
+    <summary>Do you accommodate all time zones?</summary>
+    <p>Yes. We have students across the UK, Europe, GCC and North America. We schedule lessons in your local time, including mornings and evenings where possible.</p>
+  </details>
+  <details>
+    <summary>Are all teachers native Arabs and female?</summary>
+    <p>Yes. Every teacher is a native Arabic‑speaking woman, trained in tajweed and/or Arabic teaching.</p>
+  </details>
+  <a href="/faq" className="text-link">View all FAQs →</a>
+</section>
+Improvement
+
+You already know these FAQ answers; having them exposed on the page in HTML <details> gives you rich keyword content and is favoured for featured snippet chances.
+2.7 Final CTA banner
+Where: Very bottom of Home.
+
+jsx
+Copy
+<section id="final-cta">
+  <h2>Ready to start your Qur’an or Arabic journey?</h2>
+  <p>Join women from around the world learning Qur’an and Arabic with native Arab female teachers.</p>
+  <a href="/pricing" className="btn-primary">Enrol Now</a>
+</section>
+3. Qur’an Programme page: content + placement changes
+Your current Qur’an page gives some info but doesn’t make the three focus areas obvious or keyword‑rich.
+
+3.1 Page head (<title> etc.)
+In /quran-programme page:
+
+html
+Copy
+<title>Online Quran Classes for Women – Tajweed, Fluency & Hifdh | Faseeha Institute</title>
+<meta name="description"
+      content="Women-only online Quran classes focusing on tajweed, reading fluency and hifdh. Native Arab female teachers, personalised goals and progress tracking." />
+<link rel="canonical" href="https://www.faseehainstitute.com/quran-programme" />
+<h1>Online Qur’an Programme for Women</h1>
+3.2 Sticky summary at top
+Where: Top of the page content.
+
+jsx
+Copy
+<section>
+  <p className="eyebrow">Women-only · Native Arab teachers · All levels</p>
+  <h1>Online Qur’an Programme for Women</h1>
+  <p>
+    Choose between tajweed, reading fluency and hifdh – or combine them in a personalised online Qur’an plan.
+    Designed specifically for sisters who want structured, gentle but accountable learning.
+  </p>
+  <a href="/pricing" className="btn-primary">Enrol in Qur’an Programme</a>
+</section>
+3.3 Three focus‑area sections
+Where: Immediately after the intro, each as its own <section> with an <h2> including the keyword.
+
+jsx
+Copy
+<section id="tajweed">
+  <h2>Tajweed: Qur’anic Reading Mastery</h2>
+  <p>For sisters who want to learn to read the Qur’an correctly from the Mushaf, starting from their current level.</p>
+  <ul>
+    <li>Master makharij and sifaat of every letter.</li>
+    <li>Learn rules of noon saakinah, meem saakinah, madd, qalqalah and stopping/starting.</li>
+    <li>Practise directly from the Qur’an each lesson with live correction.</li>
+  </ul>
+</section>
+
+<section id="fluency">
+  <h2>Reading Fluency Programme</h2>
+  <p>For women who can already read but want smoother, more confident Qur’an recitation.</p>
+  <ul>
+    <li>Increase speed and accuracy without losing tajweed.</li>
+    <li>Build confidence reading longer passages.</li>
+    <li>Weekly reading targets and feedback on specific mistakes.</li>
+  </ul>
+</section>
+
+<section id="hifdh">
+  <h2>Hifdh & Revision for Sisters</h2>
+  <p>For sisters who are starting or restarting Qur’an memorisation, with realistic, sustainable goals.</p>
+  <ul>
+    <li>Personalised hifdh plan (Juz ‘Amma, selected surahs or full Qur’an).</li>
+    <li>Structured daily revision routine and weekly tests.</li>
+    <li>Light tafseer and meaning to support recall.</li>
+  </ul>
+</section>
+Improvement
+
+This structure makes each programme linkable and indexable. You can have internal links like /quran-programme#hifdh from other pages.
+The headings explicitly match queries like “tajweed classes for sisters”, “hifdh for ladies”.
+3.4 Measurement & tracking section
+Where: After the three focus areas.
+
+jsx
+Copy
+<section id="tracking">
+  <h2>How We Track Your Qur’an Progress</h2>
+  <ul>
+    <li>Initial assessment in your first lesson.</li>
+    <li>Quarterly personalised Qur’an goals.</li>
+    <li>Shared online progress tracker updated each lesson.</li>
+    <li>Slack or WhatsApp check-ins between classes for accountability.</li>
+  </ul>
+</section>
+This communicates a differentiator most competitors don’t emphasize.
+
+3.5 Programme FAQs (Qur’an‑specific)
+Place a dedicated FAQ section at the bottom of this page, separate from general FAQ.
+
+4. Arabic Programme page: content + placement
+4.1 Page head
+html
+Copy
+<title>Online Arabic Course for Women – 4 Levels | Faseeha Institute</title>
+<meta name="description"
+      content="Women-only online Arabic programme with 4 levels. Start from the alphabet and progress to reading stories of the Prophets in Arabic. Native Arab female teachers." />
+<h1>Online Arabic Programme for Women</h1>
+4.2 Level roadmap section
+Where: after intro paragraph.
+
+jsx
+Copy
+<section id="levels">
+  <h2>A 4‑Level Arabic Course Built for Sisters</h2>
+  <ol>
+    <li>
+      <h3>Level 1 – Absolute Foundations</h3>
+      <p>Learn the Arabic letters, reading and correct pronunciation. Build your first 100+ words and form simple sentences.</p>
+    </li>
+    <li>
+      <h3>Level 2 – Core Arabic</h3>
+      <p>Talk about family, daily routine, time, weather, health and worship. Read short ayaat and hadith that use your vocabulary.</p>
+    </li>
+    <li>
+      <h3>Level 3 – Stories of the Prophets</h3>
+      <p>Study adapted stories of the Prophets in Arabic. Focus on vocabulary, comprehension and reading fluency.</p>
+    </li>
+    <li>
+      <h3>Level 4 – [Your Advanced Level]</h3>
+      <p>Describe here: e.g., Qur’anic texts, more complex grammar, discussion‑based lessons.</p>
+    </li>
+  </ol>
+</section>
+Improvement
+
+Current site content for Level 2 is wordy and not clearly grouped; here we compress it into SEO‑rich but scannable bullets.
+Each <h3> contains both “Level X” and a meaningful phrase that can appear in SERPs.
+4.3 Speaking from day one + Qur’an connection
+Add a dedicated section:
+
+jsx
+Copy
+<section id="speaking">
+  <h2>Arabic You Can Use and Connect to the Qur’an</h2>
+  <ul>
+    <li>Speaking practice starts from your first lesson, even in Level 1.</li>
+    <li>We draw vocabulary from both everyday life and Qur’anic texts.</li>
+    <li>Short Qur’anic ayaat and hadith are integrated as you progress.</li>
+  </ul>
+</section>
+This answers “Is this just grammar?” and matches queries like “Quranic Arabic course online”.
+
+5. Pricing / Enrol page: clarity + keyword use
+5.1 Page head
+html
+Copy
+<title>Pricing & Enrolment – Online Quran & Arabic Classes for Women | Faseeha Institute</title>
+<meta name="description"
+      content="View Faseeha Institute's pricing for online Quran and Arabic programmes for women. Choose your plan and enrol in women-only classes with native Arab teachers." />
+<h1>Pricing & Enrolment</h1>
+5.2 Plans layout
+Where: Immediately after H1.
+
+Use cards and label by outcome rather than just minutes.
+
+Example:
+
+jsx
+Copy
+<section id="plans">
+  <h2>Choose Your Plan</h2>
+  <p>All plans include women-only classes with native Arab teachers, progress tracking and flexible scheduling across time zones.</p>
+
+  <div className="grid">
+    <article>
+      <h3>Foundations Plan</h3>
+      <p>Best for complete beginners building reading or Level 1 Arabic.</p>
+      <ul>
+        <li>2 lessons per week</li>
+        <li>45 minutes each</li>
+        <li>Qur’an or Arabic</li>
+      </ul>
+      <a href="YOUR_WIX_CHECKOUT_URL" className="btn-primary">Enrol in Foundations</a>
+    </article>
+    <!-- Other plans -->
+  </div>
+</section>
+Improvement
+
+Use section heading like “Pricing for Online Quran & Arabic Classes for Women” so the page can rank for “pricing” queries.
+Keep the external Wix checkout link but clearly label it so users feel safe.
+6. About page: trust + E‑E‑A‑T
+Google increasingly cares about experience, expertise, authoritativeness, trust. Your About page can serve this.
+
+6.1 What to include and where
+Top:
+H1: About Faseeha Institute
+Short paragraph explaining mission.
+Middle sections:
+“Our Story” – how/why the founder started a women‑only institute.
+“Our Teaching Philosophy” – mercy, structure, accountability.
+“Our Teachers” – bullet text about being native Arabs, vetted, etc.
+“Our Students” – countries, number of lessons.
+7. FAQ page: structure that helps SEO
+Organise by category and repeat the core keywords naturally.
+
+Example outline:
+
+Learning & Levels
+Scheduling & Time Zones
+Teachers
+Pricing & Admin
+Technical Setup
+Use <h2> for categories and <h3> for questions.
+
+8. Technical & structural SEO notes for your build
+URL structure – keep it clean:
+/quran-programme
+/arabic-programme
+/pricing
+/about
+/testimonials
+/faq
+Navigation (header & footer)
+Make sure the main nav links to all key pages so search engines see them as important.
+In the footer, add textual links with keywords, e.g. Online Qur’an classes for women, Arabic course for sisters (linking to respective pages).
+Internal linking in content
+From blog posts and FAQs, link phrases like “online Quran classes for women” to /quran-programme.
+Link “Arabic course for women” etc. to /arabic-programme.
+Image alt attributes
+Use descriptive alt text that still reads naturally, leveraging the photos you uploaded.
+Example: alt="Muslim woman studying Quran online with notebook and laptop".
+Schema (optional but useful)
+Later you can add basic Organization schema in <script type="application/ld+json"> with name, URL, social profiles.
+9. Concrete “from current site to improved site” summary
+Problems on current site (from an SEO/UX perspective)
+
+Hero and headings are not explicit enough about “online Quran & Arabic classes for women”.
+Programme pages use nice copy but not structured for search (no clear sections for each track/level with their own headings).
+Pricing/enrol journey is slightly unclear and not strongly keyworded.
+Social proof and success stories exist but aren’t centralised and surfaced on high‑traffic pages.
+FAQs are less visible and not leveraging all the questions you told me students actually ask.
+Improvements you should implement while coding
+
+Replace home H1 with an explicit, keyword‑rich value proposition.
+Introduce “Who we serve”, “Our programmes”, “How it works”, and FAQ preview sections on Home exactly as shown.
+Split Qur’an and Arabic pages into well‑labelled <section> blocks using the headings and bullet structures above.
+Re‑write meta titles/descriptions to target one primary keyword per page.
+Move your best testimonials into a dedicated page and preview blocks on Home and Programme pages.
+Make sure every image has alt text, every important page is linked in header/footer, and internal links use meaningful anchor text.
