@@ -1,8 +1,10 @@
 import { Switch, Route } from "wouter";
+import { AnimatePresence } from "framer-motion";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import Layout from "@/components/Layout";
+import PageTransition from "@/components/PageTransition";
 import Home from "@/pages/home";
 import QuranProgramme from "@/pages/quran-programme";
 import ArabicProgramme from "@/pages/arabic-programme";
@@ -15,16 +17,18 @@ import NotFound from "@/pages/not-found";
 function Router() {
   return (
     <Layout>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/quran-programme" component={QuranProgramme} />
-        <Route path="/arabic-programme" component={ArabicProgramme} />
-        <Route path="/pricing" component={Pricing} />
-        <Route path="/about" component={About} />
-        <Route path="/testimonials" component={Testimonials} />
-        <Route path="/faq" component={FAQ} />
-        <Route component={NotFound} />
-      </Switch>
+      <AnimatePresence mode="wait">
+        <Switch>
+          <Route path="/" component={() => <PageTransition><Home /></PageTransition>} />
+          <Route path="/quran-programme" component={() => <PageTransition><QuranProgramme /></PageTransition>} />
+          <Route path="/arabic-programme" component={() => <PageTransition><ArabicProgramme /></PageTransition>} />
+          <Route path="/pricing" component={() => <PageTransition><Pricing /></PageTransition>} />
+          <Route path="/about" component={() => <PageTransition><About /></PageTransition>} />
+          <Route path="/testimonials" component={() => <PageTransition><Testimonials /></PageTransition>} />
+          <Route path="/faq" component={() => <PageTransition><FAQ /></PageTransition>} />
+          <Route component={() => <PageTransition><NotFound /></PageTransition>} />
+        </Switch>
+      </AnimatePresence>
     </Layout>
   );
 }

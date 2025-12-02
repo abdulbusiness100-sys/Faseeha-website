@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -12,7 +13,7 @@ const IMG_TESTIMONIAL_BG = "/Screenshot 2025-01-04 at 19.50.36_1764706859835.png
 
 export default function Home() {
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
@@ -337,6 +338,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </>
+    </motion.div>
   );
 }
