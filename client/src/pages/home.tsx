@@ -29,6 +29,18 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="max-w-4xl mx-auto"
+          >
+            <img 
+              src={LOGO_PATH} 
+              alt="Faseeha Institute Logo" 
+              className="h-32 w-auto object-contain mix-blend-multiply mx-auto mb-8" 
+            />
+          </motion.div>
           <div className="max-w-4xl mx-auto space-y-8 animate-in slide-in-from-bottom-8 duration-1000 fade-in fill-mode-forwards opacity-0" style={{ animationDelay: '400ms' }}>
             <div className="inline-block mb-2">
               <span className="bg-secondary/90 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] shadow-lg backdrop-blur-sm">
