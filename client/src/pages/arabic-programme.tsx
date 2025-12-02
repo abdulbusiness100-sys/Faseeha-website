@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, BookOpen } from "lucide-react";
 
-const IMG_ARABIC_HERO = "attached_assets/Screenshot 2025-01-21 at 15.00.11_1764706859835.png";
-const IMG_LEVEL_PATH = "attached_assets/4_1764706859836.png";
-const IMG_SPEAKING = "attached_assets/2_1764706859836.png";
+const IMG_ARABIC_HERO = "/Screenshot 2025-01-21 at 15.00.11_1764706859835.png";
+const IMG_LEVEL_PATH = "/4_1764706859836.png";
+const IMG_SPEAKING = "/2_1764706859836.png";
 
 export default function ArabicProgramme() {
   return (

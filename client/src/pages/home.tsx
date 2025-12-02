@@ -5,10 +5,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight, Check, Star, PlayCircle } from "lucide-react";
 
 // Image Paths
-const IMG_HERO_BG = "attached_assets/Screenshot 2025-01-04 at 19.29.25_1764706859835.png";
-const IMG_QURAN_SECTION = "attached_assets/Screenshot 2025-01-22 at 16.07.01_1764706859836.png";
-const IMG_ARABIC_SECTION = "attached_assets/Screenshot 2025-01-04 at 19.58.00_1764706859836.png";
-const IMG_TESTIMONIAL_BG = "attached_assets/Screenshot 2025-01-04 at 19.50.36_1764706859835.png";
+const IMG_HERO_BG = "/Screenshot 2025-01-04 at 19.29.25_1764706859835.png";
+const IMG_QURAN_SECTION = "/Screenshot 2025-01-22 at 16.07.01_1764706859836.png";
+const IMG_ARABIC_SECTION = "/Screenshot 2025-01-04 at 19.58.00_1764706859836.png";
+const IMG_TESTIMONIAL_BG = "/Screenshot 2025-01-04 at 19.50.36_1764706859835.png";
 
 export default function Home() {
   return (

@@ -2,8 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
-const IMG_ABOUT_HERO = "attached_assets/5_1764706859836.png";
-const IMG_FOUNDER = "attached_assets/3_1764706859836.png"; // Using a classroom/study image as placeholder for philosophy
+const IMG_ABOUT_HERO = "/5_1764706859836.png";
+const IMG_FOUNDER = "/3_1764706859836.png";
 
 export default function About() {
   return (

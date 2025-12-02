@@ -2,10 +2,10 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 
-const IMG_QURAN_HERO = "attached_assets/Screenshot 2025-01-04 at 19.49.30_1764706859836.png";
-const IMG_TAJWEED = "attached_assets/Screenshot 2025-01-22 at 16.06.35_1764706859836.png";
-const IMG_FLUENCY = "attached_assets/Screenshot 2025-01-22 at 16.07.01_1764706859836.png";
-const IMG_HIFDH = "attached_assets/Screenshot 2025-01-04 at 19.47.14_1764706859835.png";
+const IMG_QURAN_HERO = "/Screenshot 2025-01-04 at 19.49.30_1764706859836.png";
+const IMG_TAJWEED = "/Screenshot 2025-01-22 at 16.06.35_1764706859836.png";
+const IMG_FLUENCY = "/Screenshot 2025-01-22 at 16.07.01_1764706859836.png";
+const IMG_HIFDH = "/Screenshot 2025-01-04 at 19.47.14_1764706859835.png";
 
 export default function QuranProgramme() {
   return (

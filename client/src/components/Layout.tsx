@@ -4,9 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Instagram } from "lucide-react";
 
-// Corrected Logo Import - using the path where the file will be saved
-// For now we will use an img tag with the direct path as we cannot import dynamic assets easily in this env without setup
-const LOGO_PATH = "/attached_assets/Logo  (1)_1764706801942.jpeg";
+const LOGO_PATH = "/Logo  (1)_1764706801942.jpeg";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
