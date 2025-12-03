@@ -15,15 +15,15 @@ export default function PageTransition({ children }: PageTransitionProps) {
       transition={{ duration: 0.4, ease: "easeInOut" }}
       className="relative"
     >
-      {/* Faded Background with Logo and Arabic Text */}
+      {/* Faded Background with Logo */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-50">
+        <div className="absolute inset-0 flex items-center justify-center opacity-40">
           <img 
             src={LOGO_PATH} 
             alt="Background Logo" 
-            className="h-80 w-auto object-contain mb-8 mix-blend-multiply"
+            className="h-96 w-auto object-contain mix-blend-multiply filter brightness-110"
+            style={{ filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.1))' }}
           />
-          <span className="font-arabic text-[180px] leading-none text-primary text-center whitespace-nowrap">فصيحة</span>
         </div>
       </div>
 
