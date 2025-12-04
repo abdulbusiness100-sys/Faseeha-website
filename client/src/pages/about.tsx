@@ -246,7 +246,7 @@ export default function About() {
 
         {/* Values Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="bg-[#F9F9F8] border-none shadow-none hover:shadow-md transition-shadow duration-300">
+          <Card className="bg-[#F9F9F8] border border-[#57553D]/20 shadow-none hover:shadow-md hover:border-[#57553D]/40 transition-all duration-300">
             <CardContent className="p-10">
               <h3 className="text-2xl font-serif text-primary mb-4">Teaching Philosophy</h3>
               <p className="text-muted-foreground leading-relaxed font-light">
@@ -254,7 +254,7 @@ export default function About() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-[#F9F9F8] border-none shadow-none hover:shadow-md transition-shadow duration-300">
+          <Card className="bg-[#F9F9F8] border border-[#57553D]/20 shadow-none hover:shadow-md hover:border-[#57553D]/40 transition-all duration-300">
              <CardContent className="p-10">
               <h3 className="text-2xl font-serif text-primary mb-4">Our Teachers</h3>
               <p className="text-muted-foreground leading-relaxed font-light">
