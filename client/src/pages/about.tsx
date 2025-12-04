@@ -62,6 +62,47 @@ export default function About() {
           </Card>
         </div>
         
+        {/* What Happens Next */}
+        <section className="mt-32 py-24 bg-secondary/5 -mx-4 px-4 rounded-2xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">What Happens Next?</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto font-light">After you enrol, here's your journey with us</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Welcome & Assessment",
+                text: "Your first lesson is a comprehensive assessment. Your teacher evaluates your level, understands your goals, and explains how the programme will work."
+              },
+              {
+                step: "02",
+                title: "Personalised Plan",
+                text: "Together with your teacher, you agree on a schedule, milestones, and study plan tailored specifically to your capacity and lifestyle."
+              },
+              {
+                step: "03",
+                title: "Structured Progress",
+                text: "Weekly 1-1 classes with live feedback. You'll have access to our student portal to track progress and receive guidance between lessons."
+              },
+              {
+                step: "04",
+                title: "Long-Term Success",
+                text: "Quarterly reviews of your goals, ongoing accountability through check-ins, and the support of our global community of sisters."
+              }
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="w-20 h-20 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center mx-auto mb-6">
+                  <span className="font-serif text-2xl text-primary font-bold">{item.step}</span>
+                </div>
+                <h3 className="text-lg font-serif font-bold mb-3 text-primary">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <div className="mt-24 text-center">
           <h2 className="text-3xl font-serif text-primary mb-8">Join our sisterhood of learners</h2>
           <Link href="/pricing">
