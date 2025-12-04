@@ -147,7 +147,7 @@ export default function Home() {
               <div className="relative z-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="w-12 h-1 bg-secondary mb-6"></div>
                 <h3 className="text-3xl md:text-4xl font-serif mb-4">Qur’an Programme</h3>
-                <p className="text-white/90 mb-8 leading-relaxed text-lg font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden">
+                <p className="text-white/90 mb-8 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden font-normal">
                   Flexible online Qur’an classes covering tajweed, reading fluency and hifdh. Choose one focus area or combine them.
                 </p>
                 <Link href="/quran-programme">
