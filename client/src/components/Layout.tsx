@@ -50,7 +50,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <img 
                 src={LOGO_PATH} 
                 alt="Faseeha Institute Logo" 
-                className="h-12 w-auto object-contain" 
+                className="h-12 w-auto object-contain rounded-lg" 
               />
               <div className="flex flex-col">
                 <span className="font-serif text-[10px] tracking-[0.2em] text-primary/80 uppercase group-hover:text-primary transition-colors">Faseeha Institute</span>
