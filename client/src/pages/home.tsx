@@ -112,7 +112,7 @@ export default function Home() {
                 icon: "🕌"
               }
             ].map((item, i) => (
-              <div key={i} className="group relative p-8 border border-border hover:border-secondary/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 bg-[#57513d] text-[#ffffff]" style={{ clipPath: 'polygon(0 30px, 30px 0, 100% 0, 100% 100%, 0 100%)' }}>
+              <div key={i} className="group relative p-8 border border-border hover:border-secondary/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 bg-[#57513d] text-[#ffffff] rounded-2xl">
                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity text-6xl grayscale">
                   {item.icon}
                 </div>
