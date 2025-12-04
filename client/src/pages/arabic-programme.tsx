@@ -20,7 +20,7 @@ export default function ArabicProgramme() {
          
          <div className="container mx-auto px-4 relative z-10 text-center text-white">
            <p className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">Structured · Interactive · Comprehensive</p>
-           <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100">Arabic Programme</h1>
+           <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100 text-[#998a68]">Arabic Programme</h1>
            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-10 font-light animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               A 4‑level course taking you from absolute foundations to reading stories of the Prophets in Arabic.
            </p>
@@ -31,7 +31,6 @@ export default function ArabicProgramme() {
            </Link>
          </div>
       </section>
-
       {/* Level Roadmap */}
       <section className="py-24 relative">
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent"></div>
@@ -79,7 +78,6 @@ export default function ArabicProgramme() {
           </div>
         </div>
       </section>
-
       {/* Visual Break */}
       <section className="h-[400px] bg-fixed bg-center bg-cover relative" style={{ backgroundImage: `url("${IMG_LEVEL_PATH}")` }}>
         <div className="absolute inset-0 bg-primary/70 mix-blend-multiply"></div>
@@ -89,7 +87,6 @@ export default function ArabicProgramme() {
            </p>
         </div>
       </section>
-
       {/* Speaking & Quran Connection */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
