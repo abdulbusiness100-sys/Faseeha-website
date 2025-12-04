@@ -146,9 +146,30 @@ function RoadmapSection() {
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} className="mt-32 py-24 bg-gradient-to-b from-secondary/5 via-secondary/10 to-secondary/5 -mx-4 px-4 rounded-2xl relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#57553D 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+    <section ref={containerRef} className="mt-32 py-24 bg-[#F5F4F0] -mx-4 px-4 rounded-2xl relative overflow-hidden">
+      {/* Calligraphy-style decorative background */}
+      <div className="absolute inset-0 opacity-[0.04]">
+        <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="calligraphy-pattern" x="0" y="0" width="200" height="150" patternUnits="userSpaceOnUse">
+              {/* Elegant flowing curves mimicking Arabic calligraphy strokes */}
+              <path d="M20,40 Q40,20 60,40 T100,40 T140,40 T180,40" fill="none" stroke="#57553D" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M10,80 Q50,60 90,80 T170,80" fill="none" stroke="#57553D" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M30,110 Q60,90 90,110 Q120,130 150,110" fill="none" stroke="#57553D" strokeWidth="2.5" strokeLinecap="round"/>
+              <circle cx="180" cy="35" r="3" fill="#57553D"/>
+              <circle cx="15" cy="75" r="2" fill="#57553D"/>
+              <path d="M160,100 Q175,85 190,100" fill="none" stroke="#57553D" strokeWidth="1.5" strokeLinecap="round"/>
+              {/* Decorative dots and swirls */}
+              <path d="M50,130 Q70,120 90,130" fill="none" stroke="#57553D" strokeWidth="1.5" strokeLinecap="round"/>
+              <circle cx="100" cy="50" r="2" fill="#57553D"/>
+              <path d="M120,20 C130,10 140,30 150,20" fill="none" stroke="#57553D" strokeWidth="2" strokeLinecap="round"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#calligraphy-pattern)"/>
+        </svg>
+      </div>
+      {/* Soft gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F5F4F0]/50 to-transparent pointer-events-none"></div>
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
