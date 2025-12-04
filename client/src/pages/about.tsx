@@ -197,9 +197,7 @@ function RoadmapSection() {
         >
           <p className="text-muted-foreground mb-6 text-lg font-semibold">Ready to begin your journey? </p>
           <Link href="/pricing">
-            <Button size="lg" className="rounded-full px-12 h-14 text-lg shadow-xl bg-primary text-white hover:bg-primary/90 font-serif">
-              Start Today ✨
-            </Button>
+            <Button size="lg" className="rounded-full px-12 h-14 text-lg shadow-xl bg-primary text-white hover:bg-primary/90 font-serif">Start Today </Button>
           </Link>
         </motion.div>
       </div>
