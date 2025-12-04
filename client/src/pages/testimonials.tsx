@@ -61,7 +61,7 @@ export default function Testimonials() {
 
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {TESTIMONIALS.map((item, i) => (
-            <Card key={i} className="bg-white border-none shadow-sm break-inside-avoid">
+            <Card key={i} className="bg-white border border-[#57553D]/20 shadow-sm break-inside-avoid hover:border-[#57553D]/40 transition-colors duration-300">
               <CardContent className="p-6">
                 <div className="flex text-secondary mb-3">
                   {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-current" />)}
