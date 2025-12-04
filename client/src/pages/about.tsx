@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useInView, useMotionValueEvent } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const IMG_ABOUT_HERO = "/5_1764706859836.png";
 const IMG_FOUNDER = "/3_1764706859836.png";
@@ -95,22 +95,43 @@ const JOURNEY_STEPS = [
 function RoadmapStep({ step, index, total }: { step: typeof JOURNEY_STEPS[0]; index: number; total: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isEven = index % 2 === 1; // 0-indexed, so index 1, 3, 5, 7 are "even" steps (2, 4, 6, 8)
   
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: -50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -50 : 50 }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      className="relative"
+      className="relative pb-12 last:pb-0"
     >
-      {/* Timeline connector */}
-      {index < total - 1 && (
-        <div className="absolute left-6 top-20 w-0.5 h-full bg-gradient-to-b from-secondary via-secondary/50 to-transparent"></div>
-      )}
-      
-      <div className="flex gap-6 pb-16">
-        {/* Step indicator */}
+      <div className={`flex items-start gap-4 md:gap-8 ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
+        {/* Content card */}
+        <motion.div 
+          className={`flex-1 rounded-2xl p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl ${
+            isEven 
+              ? 'bg-primary text-white' 
+              : 'bg-white border border-border'
+          }`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">{step.emoji}</span>
+              <h3 className={`text-xl font-serif font-bold ${isEven ? 'text-white' : 'text-primary'}`}>{step.title}</h3>
+            </div>
+            {step.icon && (
+              <div className={`${isEven ? 'text-secondary' : step.iconColor} opacity-80`}>
+                <step.icon />
+              </div>
+            )}
+          </div>
+          <p className={`leading-relaxed ${isEven ? 'text-white/90' : 'text-muted-foreground'}`}>{step.text}</p>
+        </motion.div>
+        
+        {/* Step number indicator - connects to center line */}
         <motion.div 
           className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-lg shadow-lg z-10"
           initial={{ scale: 0 }}
@@ -120,26 +141,8 @@ function RoadmapStep({ step, index, total }: { step: typeof JOURNEY_STEPS[0]; in
           {step.step}
         </motion.div>
         
-        {/* Content card */}
-        <motion.div 
-          className="flex-1 bg-white rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-shadow duration-300"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">{step.emoji}</span>
-              <h3 className="text-xl font-serif font-bold text-primary">{step.title}</h3>
-            </div>
-            {step.icon && (
-              <div className={`${step.iconColor} opacity-80`}>
-                <step.icon />
-              </div>
-            )}
-          </div>
-          <p className="text-muted-foreground leading-relaxed">{step.text}</p>
-        </motion.div>
+        {/* Empty space for opposite side */}
+        <div className="flex-1 hidden md:block" />
       </div>
     </motion.div>
   );
@@ -147,7 +150,6 @@ function RoadmapStep({ step, index, total }: { step: typeof JOURNEY_STEPS[0]; in
 
 function RoadmapSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [percent, setPercent] = useState(0);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -155,17 +157,13 @@ function RoadmapSection() {
   });
   
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    setPercent(Math.round(latest * 100));
-  });
 
   return (
     <section ref={containerRef} className="mt-32 py-24 bg-gradient-to-b from-secondary/5 via-secondary/10 to-secondary/5 -mx-4 px-4 rounded-2xl relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#57553D 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       
-      <div className="relative z-10 max-w-5xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-secondary font-bold tracking-widest text-xs uppercase block mb-4">🗺️ Your Journey</span>
@@ -173,54 +171,21 @@ function RoadmapSection() {
           <p className="text-muted-foreground max-w-2xl mx-auto font-light text-lg">Scroll through your learning journey with Faseeha Institute ✨</p>
         </div>
 
-        <div className="flex gap-8">
-          {/* Progress bar - sticky sidebar */}
-          <div className="hidden md:block w-20 flex-shrink-0">
-            <div className="sticky top-32">
-              <div className="relative h-[400px] flex flex-col items-center">
-                {/* Progress track */}
-                <div className="w-2 h-full bg-primary/10 rounded-full overflow-hidden">
-                  <motion.div 
-                    className="w-full bg-gradient-to-b from-secondary via-secondary to-primary rounded-full origin-top"
-                    style={{ height: progressHeight }}
-                  />
-                </div>
-                
-                {/* Progress percentage */}
-                <motion.div 
-                  className="mt-4 text-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: percent > 0 ? 1 : 0.3 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <span className="text-2xl font-bold text-primary font-serif">
-                    {percent}%
-                  </span>
-                  <p className="text-xs text-muted-foreground mt-1">Complete</p>
-                </motion.div>
-                
-                {/* Milestone markers */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full flex flex-col justify-between py-2">
-                  {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-                    <motion.div
-                      key={i}
-                      className="w-3 h-3 rounded-full bg-white border-2 border-primary/30"
-                      style={{
-                        backgroundColor: useTransform(
-                          scrollYProgress,
-                          [i * 0.125, (i + 1) * 0.125],
-                          ["rgb(255,255,255)", "rgb(197,201,140)"]
-                        )
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+        {/* Timeline with centered progress bar */}
+        <div className="relative">
+          {/* Center progress bar - spans full height */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-1 z-0">
+            {/* Background track */}
+            <div className="absolute inset-0 bg-primary/10 rounded-full" />
+            {/* Animated fill */}
+            <motion.div 
+              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-secondary via-secondary to-primary rounded-full origin-top"
+              style={{ height: progressHeight }}
+            />
           </div>
 
           {/* Steps */}
-          <div className="flex-1">
+          <div className="relative z-10">
             {JOURNEY_STEPS.map((step, index) => (
               <RoadmapStep key={step.step} step={step} index={index} total={JOURNEY_STEPS.length} />
             ))}
