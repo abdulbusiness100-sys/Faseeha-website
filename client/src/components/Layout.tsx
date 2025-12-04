@@ -156,7 +156,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                  <img 
                     src={LOGO_PATH} 
                     alt="Faseeha Institute Logo" 
-                    className="h-12 w-auto object-contain opacity-90" 
+                    className="h-12 w-auto object-contain opacity-90 rounded-lg" 
                   />
               </div>
               

@@ -20,7 +20,7 @@ export default function QuranProgramme() {
          
          <div className="container mx-auto px-4 relative z-10 text-center text-white">
            <p className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">Women-only · Native Teachers</p>
-           <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100">Qur’an Programme</h1>
+           <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-100 text-[#70684d]">Qur’an Programme</h1>
            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-10 font-light animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
              Recite, memorise and understand the Qur’an with confidence through personalised 1-1 tuition.
            </p>
@@ -39,7 +39,6 @@ export default function QuranProgramme() {
            </svg>
          </div>
       </section>
-
       {/* Focus Areas */}
       <div className="container mx-auto px-4 py-24 space-y-32">
         
@@ -136,7 +135,6 @@ export default function QuranProgramme() {
           </div>
         </section>
       </div>
-
       {/* Measurement & Tracking */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#E0DFD9 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
