@@ -47,13 +47,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-              <div className="bg-[#E0DFD9] rounded-lg p-2">
-                <img 
-                  src={LOGO_PATH} 
-                  alt="Faseeha Institute Logo" 
-                  className="h-10 w-auto object-contain mix-blend-multiply" 
-                />
-              </div>
+              <img 
+                src={LOGO_PATH} 
+                alt="Faseeha Institute Logo" 
+                className="h-12 w-auto object-contain" 
+              />
               <div className="flex flex-col">
                 <span className="font-serif text-[10px] tracking-[0.2em] text-primary/80 uppercase group-hover:text-primary transition-colors">Faseeha Institute</span>
               </div>
@@ -160,7 +158,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     alt="Faseeha Institute Logo" 
                     className="h-12 w-auto object-contain opacity-90" 
                   />
-                  <h3 className="font-arabic text-3xl text-primary-foreground">فصيحة</h3>
               </div>
               
               <p className="text-primary-foreground/80 max-w-md leading-relaxed mb-8 font-light">

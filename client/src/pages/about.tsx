@@ -15,7 +15,7 @@ export default function About() {
            <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
         </div>
         <div className="container mx-auto px-4 text-center max-w-4xl relative z-10 text-white animate-in fade-in slide-in-from-bottom-6 duration-1000">
-          <h1 className="text-4xl md:text-6xl font-serif mb-8">About Faseeha Institute</h1>
+          <h1 className="text-4xl md:text-6xl font-serif mb-8 text-white" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.7), 0 2px 10px rgba(0,0,0,0.5)' }}>About Faseeha Institute</h1>
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light">
             A sanctuary for sisters to reconnect with the Book of Allah through structured, compassionate, and professional teaching.
           </p>
