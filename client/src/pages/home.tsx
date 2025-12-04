@@ -62,14 +62,12 @@ export default function Home() {
           <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent mx-auto"></div>
         </div>
       </section>
-
       {/* Arabic Calligraphy Divider */}
       <div className="bg-background py-8 overflow-hidden relative">
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
           <span className="font-arabic text-[200px] leading-none text-primary whitespace-nowrap">اقرأ باسم ربك الذي خلق</span>
         </div>
       </div>
-
       {/* Introduction Section */}
       <section className="py-20 bg-white relative">
         <div className="container mx-auto px-4">
@@ -87,7 +85,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Who This Is For */}
       <section className="py-20 bg-background relative">
         <div className="container mx-auto px-4">
@@ -129,7 +126,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Our Programmes */}
       <section className="py-24 bg-secondary/5">
         <div className="container mx-auto px-4">
@@ -172,7 +168,7 @@ export default function Home() {
               
               <div className="relative z-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="w-12 h-1 bg-secondary mb-6"></div>
-                <h3 className="text-3xl md:text-4xl font-serif mb-4">Arabic Programme</h3>
+                <h3 className="text-3xl md:text-4xl font-serif mb-4 text-[#ffffff]">Arabic Programme</h3>
                 <p className="text-white/90 mb-8 leading-relaxed text-lg font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden">
                   A 4‑level Arabic course starting from absolute foundations to reading stories of the Prophets in Arabic.
                 </p>
@@ -187,7 +183,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* How It Works */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -234,7 +229,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Testimonials Preview */}
       <section className="py-24 relative bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
@@ -282,7 +276,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FAQ Preview */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -320,7 +313,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Final CTA */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-secondary/20"></div>
