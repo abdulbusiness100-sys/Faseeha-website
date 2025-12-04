@@ -1,21 +1,251 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { 
-  Mail, 
-  ClipboardCheck, 
-  Target, 
-  Calendar, 
-  Video, 
-  MessageCircle, 
-  BarChart3, 
-  Users,
-  ChevronRight,
-  ArrowDown
-} from "lucide-react";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView, useMotionValueEvent } from "framer-motion";
 
 const IMG_ABOUT_HERO = "/5_1764706859836.png";
 const IMG_FOUNDER = "/3_1764706859836.png";
+
+const SlackIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+    <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/>
+  </svg>
+);
+
+const ZoomIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+    <path d="M4.585 6.836h9.88c1.405 0 2.545 1.14 2.545 2.546v5.73a2.546 2.546 0 0 1-2.546 2.545H4.585A2.545 2.545 0 0 1 2.04 15.11V9.382a2.546 2.546 0 0 1 2.545-2.546zm12.884 3.508l3.99-2.49a.424.424 0 0 1 .648.36v7.5a.424.424 0 0 1-.648.36l-3.99-2.49V10.344z"/>
+  </svg>
+);
+
+const GmailIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+  </svg>
+);
+
+const JOURNEY_STEPS = [
+  {
+    step: "01",
+    emoji: "💌",
+    title: "Welcome Email",
+    text: "After signing up, you'll receive a warm welcome email with your login details and a form to share your goals, schedule preferences, and learning history.",
+    icon: GmailIcon,
+    iconColor: "text-red-500"
+  },
+  {
+    step: "02",
+    emoji: "🤝",
+    title: "Teacher Matching",
+    text: "We carefully match you with the perfect teacher based on your goals, time zone, and learning style. You'll be introduced via email within 48 hours.",
+    icon: null,
+    iconColor: ""
+  },
+  {
+    step: "03",
+    emoji: "📅",
+    title: "Schedule Your First Lesson",
+    text: "Your teacher reaches out to arrange your first lesson at a time that works for you. We accommodate all time zones across UK, Europe, GCC, and beyond.",
+    icon: null,
+    iconColor: ""
+  },
+  {
+    step: "04",
+    emoji: "🎯",
+    title: "Assessment & Goal Setting",
+    text: "Your first lesson is a comprehensive assessment. Your teacher evaluates your level, understands your aspirations, and creates a roadmap just for you.",
+    icon: null,
+    iconColor: ""
+  },
+  {
+    step: "05",
+    emoji: "🎥",
+    title: "Weekly 1-1 Lessons",
+    text: "Start your weekly private lessons via Zoom. Each session is tailored to your pace with live correction, practice, and homework for the week ahead.",
+    icon: ZoomIcon,
+    iconColor: "text-blue-500"
+  },
+  {
+    step: "06",
+    emoji: "💬",
+    title: "Slack Check-ins",
+    text: "Stay accountable with our Slack community. Your teacher checks in mid-week, you can ask questions, and connect with fellow sisters on the same journey.",
+    icon: SlackIcon,
+    iconColor: "text-purple-500"
+  },
+  {
+    step: "07",
+    emoji: "📊",
+    title: "Progress Tracking",
+    text: "Access your personal progress tracker updated after each lesson. See your milestones, celebrate wins, and stay motivated with clear visual progress.",
+    icon: null,
+    iconColor: ""
+  },
+  {
+    step: "08",
+    emoji: "🌟",
+    title: "Quarterly Reviews & Community",
+    text: "Every 3 months, review your progress and set new goals. Join our global sisterhood, attend exclusive events, and continue growing together.",
+    icon: null,
+    iconColor: ""
+  }
+];
+
+function RoadmapStep({ step, index, total }: { step: typeof JOURNEY_STEPS[0]; index: number; total: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -50 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      className="relative"
+    >
+      {/* Timeline connector */}
+      {index < total - 1 && (
+        <div className="absolute left-6 top-20 w-0.5 h-full bg-gradient-to-b from-secondary via-secondary/50 to-transparent"></div>
+      )}
+      
+      <div className="flex gap-6 pb-16">
+        {/* Step indicator */}
+        <motion.div 
+          className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-lg shadow-lg z-10"
+          initial={{ scale: 0 }}
+          animate={isInView ? { scale: 1 } : { scale: 0 }}
+          transition={{ duration: 0.4, delay: 0.2, type: "spring" }}
+        >
+          {step.step}
+        </motion.div>
+        
+        {/* Content card */}
+        <motion.div 
+          className="flex-1 bg-white rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-shadow duration-300"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">{step.emoji}</span>
+              <h3 className="text-xl font-serif font-bold text-primary">{step.title}</h3>
+            </div>
+            {step.icon && (
+              <div className={`${step.iconColor} opacity-80`}>
+                <step.icon />
+              </div>
+            )}
+          </div>
+          <p className="text-muted-foreground leading-relaxed">{step.text}</p>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+}
+
+function RoadmapSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [percent, setPercent] = useState(0);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+  
+  const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setPercent(Math.round(latest * 100));
+  });
+
+  return (
+    <section ref={containerRef} className="mt-32 py-24 bg-gradient-to-b from-secondary/5 via-secondary/10 to-secondary/5 -mx-4 px-4 rounded-2xl relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#57553D 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+      
+      <div className="relative z-10 max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <span className="text-secondary font-bold tracking-widest text-xs uppercase block mb-4">🗺️ Your Journey</span>
+          <h2 className="text-3xl md:text-5xl font-serif text-primary mb-6">What Happens Next?</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto font-light text-lg">Scroll through your learning journey with Faseeha Institute ✨</p>
+        </div>
+
+        <div className="flex gap-8">
+          {/* Progress bar - sticky sidebar */}
+          <div className="hidden md:block w-20 flex-shrink-0">
+            <div className="sticky top-32">
+              <div className="relative h-[400px] flex flex-col items-center">
+                {/* Progress track */}
+                <div className="w-2 h-full bg-primary/10 rounded-full overflow-hidden">
+                  <motion.div 
+                    className="w-full bg-gradient-to-b from-secondary via-secondary to-primary rounded-full origin-top"
+                    style={{ height: progressHeight }}
+                  />
+                </div>
+                
+                {/* Progress percentage */}
+                <motion.div 
+                  className="mt-4 text-center"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: percent > 0 ? 1 : 0.3 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <span className="text-2xl font-bold text-primary font-serif">
+                    {percent}%
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-1">Complete</p>
+                </motion.div>
+                
+                {/* Milestone markers */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full flex flex-col justify-between py-2">
+                  {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+                    <motion.div
+                      key={i}
+                      className="w-3 h-3 rounded-full bg-white border-2 border-primary/30"
+                      style={{
+                        backgroundColor: useTransform(
+                          scrollYProgress,
+                          [i * 0.125, (i + 1) * 0.125],
+                          ["rgb(255,255,255)", "rgb(197,201,140)"]
+                        )
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Steps */}
+          <div className="flex-1">
+            {JOURNEY_STEPS.map((step, index) => (
+              <RoadmapStep key={step.step} step={step} index={index} total={JOURNEY_STEPS.length} />
+            ))}
+          </div>
+        </div>
+
+        {/* Final CTA */}
+        <motion.div 
+          className="text-center mt-12 pt-8 border-t border-border"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-muted-foreground mb-6 font-light text-lg">Ready to begin your journey? 🚀</p>
+          <Link href="/pricing">
+            <Button size="lg" className="rounded-full px-12 h-14 text-lg shadow-xl bg-primary text-white hover:bg-primary/90 font-serif">
+              Start Today ✨
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export default function About() {
   return (
@@ -74,139 +304,7 @@ export default function About() {
           </Card>
         </div>
         
-        {/* What Happens Next - Visual Journey */}
-        <section className="mt-32 py-24 bg-primary -mx-4 px-4 rounded-2xl relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#E0DFD9 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-          
-          <div className="relative z-10">
-            <div className="text-center mb-20">
-              <span className="text-secondary font-bold tracking-widest text-xs uppercase block mb-4">Your Journey</span>
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">What Happens Next?</h2>
-              <p className="text-white/80 max-w-2xl mx-auto font-light text-lg">After you enrol, here's exactly what your learning journey looks like with Faseeha Institute</p>
-            </div>
-
-            {/* Journey Steps - Visual Pathway */}
-            <div className="max-w-6xl mx-auto">
-              {/* Row 1: Steps 1-4 */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                {[
-                  {
-                    step: "01",
-                    icon: Mail,
-                    title: "Enrolment Email",
-                    text: "After signing up, you'll receive a welcome email with your login details and a form to share your goals, schedule preferences, and learning history."
-                  },
-                  {
-                    step: "02",
-                    icon: ClipboardCheck,
-                    title: "Teacher Matching",
-                    text: "We carefully match you with the perfect teacher based on your goals, time zone, and learning style. You'll be introduced via email within 48 hours."
-                  },
-                  {
-                    step: "03",
-                    icon: Calendar,
-                    title: "Schedule Your First Lesson",
-                    text: "Your teacher reaches out to arrange your first lesson at a time that works for you. We accommodate all time zones across UK, Europe, GCC, and beyond."
-                  },
-                  {
-                    step: "04",
-                    icon: Target,
-                    title: "Assessment & Goal Setting",
-                    text: "Your first lesson is a comprehensive assessment. Your teacher evaluates your level, understands your aspirations, and creates a roadmap just for you."
-                  }
-                ].map((item, i) => (
-                  <div key={i} className="relative group">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                          <item.icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <span className="text-secondary font-bold text-sm">{item.step}</span>
-                      </div>
-                      <h3 className="text-lg font-serif font-bold mb-3 text-white">{item.title}</h3>
-                      <p className="text-sm text-white/70 leading-relaxed">{item.text}</p>
-                    </div>
-                    {/* Arrow to next step (hidden on last item and mobile) */}
-                    {i < 3 && (
-                      <div className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                        <ChevronRight className="w-6 h-6 text-secondary" />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Connecting Arrow Down */}
-              <div className="flex justify-center my-6">
-                <div className="flex flex-col items-center gap-1">
-                  <div className="w-px h-8 bg-secondary/50"></div>
-                  <ArrowDown className="w-6 h-6 text-secondary animate-bounce" />
-                  <div className="w-px h-8 bg-secondary/50"></div>
-                </div>
-              </div>
-
-              {/* Row 2: Steps 5-8 */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                {[
-                  {
-                    step: "05",
-                    icon: Video,
-                    title: "Weekly 1-1 Lessons",
-                    text: "Start your weekly private lessons via Zoom. Each session is tailored to your pace with live correction, practice, and homework for the week ahead."
-                  },
-                  {
-                    step: "06",
-                    icon: MessageCircle,
-                    title: "Slack Check-ins",
-                    text: "Stay accountable with our Slack community. Your teacher checks in mid-week, you can ask questions, and connect with fellow sisters on the same journey."
-                  },
-                  {
-                    step: "07",
-                    icon: BarChart3,
-                    title: "Progress Tracking",
-                    text: "Access your personal progress tracker updated after each lesson. See your milestones, celebrate wins, and stay motivated with clear visual progress."
-                  },
-                  {
-                    step: "08",
-                    icon: Users,
-                    title: "Quarterly Reviews & Community",
-                    text: "Every 3 months, review your progress and set new goals. Join our global sisterhood, attend exclusive events, and continue growing together."
-                  }
-                ].map((item, i) => (
-                  <div key={i} className="relative group">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                          <item.icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <span className="text-secondary font-bold text-sm">{item.step}</span>
-                      </div>
-                      <h3 className="text-lg font-serif font-bold mb-3 text-white">{item.title}</h3>
-                      <p className="text-sm text-white/70 leading-relaxed">{item.text}</p>
-                    </div>
-                    {/* Arrow to next step (hidden on last item and mobile) */}
-                    {i < 3 && (
-                      <div className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                        <ChevronRight className="w-6 h-6 text-secondary" />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Final CTA */}
-              <div className="text-center mt-16 pt-8 border-t border-white/10">
-                <p className="text-white/80 mb-6 font-light text-lg">Ready to begin your journey?</p>
-                <Link href="/pricing">
-                  <Button size="lg" className="rounded-full px-12 h-14 text-lg shadow-xl bg-secondary text-primary hover:bg-white font-serif">
-                    Start Today
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <RoadmapSection />
 
         <div className="mt-24 text-center">
           <h2 className="text-3xl font-serif text-primary mb-8">Join our sisterhood of learners</h2>
