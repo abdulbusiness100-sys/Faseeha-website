@@ -120,7 +120,7 @@ export default function Home() {
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-serif mb-4 text-primary group-hover:text-primary/80 transition-colors">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed font-light">{item.description}</p>
+                <p className="leading-relaxed font-light text-[#ffffff]">{item.description}</p>
               </div>
             ))}
           </div>
