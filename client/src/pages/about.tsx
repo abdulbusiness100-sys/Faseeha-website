@@ -163,7 +163,7 @@ function RoadmapSection() {
         <div className="text-center mb-16">
           <span className="font-bold tracking-widest uppercase block mb-4 text-[#57513d] text-[15px]">🗺️ Your Journey</span>
           <h2 className="text-3xl md:text-5xl font-serif text-primary mb-6">What Happens Next?</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto font-light text-lg">Scroll through your learning journey with Faseeha Institute ✨</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-semibold">Scroll through your learning journey with Faseeha Institute </p>
         </div>
 
         {/* Timeline with centered progress bar */}
