@@ -52,7 +52,7 @@ export default function Pricing() {
             </p>
 
             <div className="mt-auto w-full max-w-xs">
-              <a href="https://www.faseehainstitute.com/pricing/payment/eyJwbGFuSWQiOiI2MDJmNWVmOC04MzJiLTQ3ODYtYjZmNy1kNGUwMTMyOTU4OTEiLCJpbnRlZ3JhdGlvbkRhdGEiOnt9LCJjaGVja291dEZsb3dJZCI6ImMwYmZlMzdjLWVlMzItNGEzNC05ZDJjLTgxMDhmZDBlYTZjZiJ9" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.faseehainstitute.com/pricing/payment/eyJpbnRlZ3JhdGlvbkRhdGEiOnt9LCJwbGFuSWQiOiJlZWJiY2U4NC05ZWNhLTQ5NjMtOGFkYi1lZTVhOTdmNjA1YzMiLCJjaGVja291dEZsb3dJZCI6ImEwZWRjNzk2LTRlYzItNGM1Zi04MmE5LWE3ZDkwZGRiODcyYSJ9" target="_blank" rel="noopener noreferrer">
                 <Button className="w-full rounded-full bg-[#9A9B89] hover:bg-[#8A8B79] text-white h-12 text-lg font-serif shadow-md hover:shadow-lg transition-all">
                   Select
                 </Button>
