@@ -105,10 +105,10 @@ function RoadmapStep({ step, index, total }: { step: typeof JOURNEY_STEPS[0]; in
       transition={{ duration: 0.6, delay: 0.1 }}
       className="relative pb-12 last:pb-0"
     >
-      <div className={`flex items-start gap-4 md:gap-8 ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
+      <div className={`flex items-start ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
         {/* Content card */}
         <motion.div 
-          className={`flex-1 rounded-2xl p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl ${
+          className={`w-full md:w-[calc(50%-2rem)] rounded-2xl p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl ${
             isEven 
               ? 'bg-primary text-white' 
               : 'bg-white border border-border'
@@ -130,19 +130,6 @@ function RoadmapStep({ step, index, total }: { step: typeof JOURNEY_STEPS[0]; in
           </div>
           <p className={`leading-relaxed ${isEven ? 'text-white/90' : 'text-muted-foreground'}`}>{step.text}</p>
         </motion.div>
-        
-        {/* Step number indicator - connects to center line */}
-        <motion.div 
-          className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-lg shadow-lg z-10"
-          initial={{ scale: 0 }}
-          animate={isInView ? { scale: 1 } : { scale: 0 }}
-          transition={{ duration: 0.4, delay: 0.2, type: "spring" }}
-        >
-          {step.step}
-        </motion.div>
-        
-        {/* Empty space for opposite side */}
-        <div className="flex-1 hidden md:block" />
       </div>
     </motion.div>
   );
