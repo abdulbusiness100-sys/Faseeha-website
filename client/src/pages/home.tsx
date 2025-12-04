@@ -119,7 +119,7 @@ export default function Home() {
                 <div className="w-14 h-14 rounded-full bg-primary/5 group-hover:bg-secondary/20 flex items-center justify-center mb-6 text-2xl transition-colors duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-2xl font-serif mb-4 text-primary group-hover:text-primary/80 transition-colors">{item.title}</h3>
+                <h3 className="text-2xl font-serif mb-4 group-hover:text-primary/80 transition-colors text-[#ffffffcc]">{item.title}</h3>
                 <p className="leading-relaxed font-light text-[#ffffff]">{item.description}</p>
               </div>
             ))}
