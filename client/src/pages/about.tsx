@@ -147,16 +147,17 @@ function RoadmapSection() {
 
   return (
     <section ref={containerRef} className="mt-32 py-24 -mx-4 px-4 rounded-2xl relative overflow-hidden">
-      {/* Calligraphy background image */}
-      <div className="absolute inset-0">
-        <img 
-          src="/calligraphy-bg.jpg" 
-          alt="" 
-          className="w-full h-full object-cover"
-        />
-      </div>
+      {/* Calligraphy background image - tiled for sharpness */}
+      <div 
+        className="absolute inset-0"
+        style={{ 
+          backgroundImage: 'url(/calligraphy-bg.jpg)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: '400px auto'
+        }}
+      ></div>
       {/* Overlay to make content more visible */}
-      <div className="absolute inset-0 bg-[#F5F4F0]/90"></div>
+      <div className="absolute inset-0 bg-[#F5F4F0]/85"></div>
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
