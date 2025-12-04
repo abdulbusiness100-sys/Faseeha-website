@@ -239,7 +239,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4 border-b border-white/10 pb-8">
             <div className="max-w-2xl">
               <span className="text-secondary font-bold tracking-widest text-xs uppercase">Testimonials</span>
-              <h2 className="text-3xl md:text-5xl font-serif mt-3">Student Voices</h2>
+              <h2 className="text-3xl md:text-5xl font-serif mt-3 text-[#ffffff]">Student Voices</h2>
             </div>
             <Link href="/testimonials">
               <Button variant="link" className="text-white text-lg hover:text-secondary p-0 font-serif italic">Read more stories &rarr;</Button>
