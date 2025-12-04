@@ -41,12 +41,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
+          isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+          <Link href="/" className="flex items-center gap-3 group cursor-pointer flex-shrink-0">
               <img 
                 src={LOGO_PATH} 
                 alt="Faseeha Institute Logo" 
@@ -57,13 +57,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Nav - Centered */}
+          <nav className="hidden lg:flex items-center gap-12 flex-1 justify-center">
             {NAV_ITEMS.map((item) => (
               <Link 
                 key={item.href} 
                 href={item.href}
-                className={`text-sm font-medium tracking-wide hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full cursor-pointer ${
+                className={`text-sm font-medium tracking-wide hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full cursor-pointer whitespace-nowrap ${
                   location === item.href ? "text-primary after:w-full" : "text-muted-foreground"
                 }`}
               >
@@ -72,21 +72,34 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
 
-          {/* CTA & Mobile Menu */}
-          <div className="flex items-center gap-4">
-            <div className="hidden sm:flex items-center gap-3">
-               <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          {/* Right Section - Actions & Socials */}
+          <div className="hidden lg:flex items-center gap-8 flex-shrink-0">
+            {/* Divider */}
+            <div className="h-6 w-px bg-border/50"></div>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-6">
+              <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              {/* TikTok Icon */}
               <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
               </a>
             </div>
             
+            {/* Enrol Button */}
             <Link href="/pricing">
-              <Button size="sm" className="hidden sm:inline-flex rounded-full px-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-md hover:shadow-lg cursor-pointer font-serif tracking-wide">
+              <Button size="sm" className="rounded-full px-6 bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-md hover:shadow-lg cursor-pointer font-serif tracking-wide">
                 Enrol Now
+              </Button>
+            </Link>
+          </div>
+
+          {/* Mobile Actions */}
+          <div className="flex lg:hidden items-center gap-2">
+            <Link href="/pricing" className="inline-block">
+              <Button size="sm" className="rounded-full px-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-md font-serif text-xs">
+                Enrol
               </Button>
             </Link>
 
@@ -104,7 +117,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       <img 
                         src={LOGO_PATH} 
                         alt="Faseeha Institute Logo" 
-                        className="h-24 w-auto object-contain mix-blend-multiply" 
+                        className="h-24 w-auto object-contain mix-blend-multiply rounded-lg" 
                       />
                     </div>
                     <nav className="flex flex-col gap-4 text-center">
