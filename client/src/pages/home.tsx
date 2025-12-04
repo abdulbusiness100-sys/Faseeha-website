@@ -250,15 +250,15 @@ export default function Home() {
             {[
               {
                 quote: "I started not knowing the Arabic letters. Within months I could read the Mushaf and I’m now memorising Juz ‘Amma.",
-                author: "Qur’an Foundations Student"
+                author: "Amina A."
               },
               {
                 quote: "My teacher is so patient and explains concepts clearly. The lessons are well structured and easy to follow.",
-                author: "Arabic Level 1 Student"
+                author: "Sarah M."
               },
               {
                 quote: "I love that there’s a focus on practising speaking very early on. It’s one of the best ways to remember new vocabulary.",
-                author: "Nina Espiritu"
+                author: "Nina E."
               }
             ].map((item, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300">
