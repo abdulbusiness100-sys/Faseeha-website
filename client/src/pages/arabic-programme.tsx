@@ -128,7 +128,7 @@ export default function ArabicProgramme() {
           
           <div className="order-1 lg:order-2 relative">
              <div className="absolute -inset-4 bg-secondary/20 rounded-full blur-3xl opacity-50"></div>
-             <img src={IMG_SPEAKING} alt="Student Speaking" className="rounded-2xl shadow-2xl w-full object-cover relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-700" />
+             <img src={IMG_SPEAKING} loading="lazy" alt="Student Speaking" className="rounded-2xl shadow-2xl w-full object-cover relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-700" />
           </div>
         </div>
       </section>

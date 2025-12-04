@@ -1,6 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { 
+  Mail, 
+  ClipboardCheck, 
+  Target, 
+  Calendar, 
+  Video, 
+  MessageCircle, 
+  BarChart3, 
+  Users,
+  ChevronRight,
+  ArrowDown
+} from "lucide-react";
 
 const IMG_ABOUT_HERO = "/5_1764706859836.png";
 const IMG_FOUNDER = "/3_1764706859836.png";
@@ -38,7 +50,7 @@ export default function About() {
           </div>
           <div className="relative">
              <div className="absolute inset-0 bg-secondary/20 rounded-tr-[80px] rounded-bl-[80px] transform translate-x-4 translate-y-4"></div>
-             <img src={IMG_FOUNDER} alt="Teaching Philosophy" className="w-full rounded-tr-[80px] rounded-bl-[80px] shadow-xl relative z-10 object-cover aspect-square" />
+             <img src={IMG_FOUNDER} loading="lazy" alt="Teaching Philosophy" className="w-full rounded-tr-[80px] rounded-bl-[80px] shadow-xl relative z-10 object-cover aspect-square" />
           </div>
         </section>
 
@@ -62,44 +74,137 @@ export default function About() {
           </Card>
         </div>
         
-        {/* What Happens Next */}
-        <section className="mt-32 py-24 bg-secondary/5 -mx-4 px-4 rounded-2xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">What Happens Next?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto font-light">After you enrol, here's your journey with us</p>
-          </div>
+        {/* What Happens Next - Visual Journey */}
+        <section className="mt-32 py-24 bg-primary -mx-4 px-4 rounded-2xl relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#E0DFD9 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+          
+          <div className="relative z-10">
+            <div className="text-center mb-20">
+              <span className="text-secondary font-bold tracking-widest text-xs uppercase block mb-4">Your Journey</span>
+              <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">What Happens Next?</h2>
+              <p className="text-white/80 max-w-2xl mx-auto font-light text-lg">After you enrol, here's exactly what your learning journey looks like with Faseeha Institute</p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Welcome & Assessment",
-                text: "Your first lesson is a comprehensive assessment. Your teacher evaluates your level, understands your goals, and explains how the programme will work."
-              },
-              {
-                step: "02",
-                title: "Personalised Plan",
-                text: "Together with your teacher, you agree on a schedule, milestones, and study plan tailored specifically to your capacity and lifestyle."
-              },
-              {
-                step: "03",
-                title: "Structured Progress",
-                text: "Weekly 1-1 classes with live feedback. You'll have access to our student portal to track progress and receive guidance between lessons."
-              },
-              {
-                step: "04",
-                title: "Long-Term Success",
-                text: "Quarterly reviews of your goals, ongoing accountability through check-ins, and the support of our global community of sisters."
-              }
-            ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="w-20 h-20 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center mx-auto mb-6">
-                  <span className="font-serif text-2xl text-primary font-bold">{item.step}</span>
-                </div>
-                <h3 className="text-lg font-serif font-bold mb-3 text-primary">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+            {/* Journey Steps - Visual Pathway */}
+            <div className="max-w-6xl mx-auto">
+              {/* Row 1: Steps 1-4 */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                {[
+                  {
+                    step: "01",
+                    icon: Mail,
+                    title: "Enrolment Email",
+                    text: "After signing up, you'll receive a welcome email with your login details and a form to share your goals, schedule preferences, and learning history."
+                  },
+                  {
+                    step: "02",
+                    icon: ClipboardCheck,
+                    title: "Teacher Matching",
+                    text: "We carefully match you with the perfect teacher based on your goals, time zone, and learning style. You'll be introduced via email within 48 hours."
+                  },
+                  {
+                    step: "03",
+                    icon: Calendar,
+                    title: "Schedule Your First Lesson",
+                    text: "Your teacher reaches out to arrange your first lesson at a time that works for you. We accommodate all time zones across UK, Europe, GCC, and beyond."
+                  },
+                  {
+                    step: "04",
+                    icon: Target,
+                    title: "Assessment & Goal Setting",
+                    text: "Your first lesson is a comprehensive assessment. Your teacher evaluates your level, understands your aspirations, and creates a roadmap just for you."
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="relative group">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                          <item.icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <span className="text-secondary font-bold text-sm">{item.step}</span>
+                      </div>
+                      <h3 className="text-lg font-serif font-bold mb-3 text-white">{item.title}</h3>
+                      <p className="text-sm text-white/70 leading-relaxed">{item.text}</p>
+                    </div>
+                    {/* Arrow to next step (hidden on last item and mobile) */}
+                    {i < 3 && (
+                      <div className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                        <ChevronRight className="w-6 h-6 text-secondary" />
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
+
+              {/* Connecting Arrow Down */}
+              <div className="flex justify-center my-6">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="w-px h-8 bg-secondary/50"></div>
+                  <ArrowDown className="w-6 h-6 text-secondary animate-bounce" />
+                  <div className="w-px h-8 bg-secondary/50"></div>
+                </div>
+              </div>
+
+              {/* Row 2: Steps 5-8 */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                {[
+                  {
+                    step: "05",
+                    icon: Video,
+                    title: "Weekly 1-1 Lessons",
+                    text: "Start your weekly private lessons via Zoom. Each session is tailored to your pace with live correction, practice, and homework for the week ahead."
+                  },
+                  {
+                    step: "06",
+                    icon: MessageCircle,
+                    title: "Slack Check-ins",
+                    text: "Stay accountable with our Slack community. Your teacher checks in mid-week, you can ask questions, and connect with fellow sisters on the same journey."
+                  },
+                  {
+                    step: "07",
+                    icon: BarChart3,
+                    title: "Progress Tracking",
+                    text: "Access your personal progress tracker updated after each lesson. See your milestones, celebrate wins, and stay motivated with clear visual progress."
+                  },
+                  {
+                    step: "08",
+                    icon: Users,
+                    title: "Quarterly Reviews & Community",
+                    text: "Every 3 months, review your progress and set new goals. Join our global sisterhood, attend exclusive events, and continue growing together."
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="relative group">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                          <item.icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <span className="text-secondary font-bold text-sm">{item.step}</span>
+                      </div>
+                      <h3 className="text-lg font-serif font-bold mb-3 text-white">{item.title}</h3>
+                      <p className="text-sm text-white/70 leading-relaxed">{item.text}</p>
+                    </div>
+                    {/* Arrow to next step (hidden on last item and mobile) */}
+                    {i < 3 && (
+                      <div className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                        <ChevronRight className="w-6 h-6 text-secondary" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Final CTA */}
+              <div className="text-center mt-16 pt-8 border-t border-white/10">
+                <p className="text-white/80 mb-6 font-light text-lg">Ready to begin your journey?</p>
+                <Link href="/pricing">
+                  <Button size="lg" className="rounded-full px-12 h-14 text-lg shadow-xl bg-secondary text-primary hover:bg-white font-serif">
+                    Start Today
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -61,7 +61,7 @@ export default function QuranProgramme() {
           </div>
           <div className="order-1 lg:order-2 relative group">
              <div className="absolute inset-0 bg-secondary/20 rounded-2xl transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-             <img src={IMG_TAJWEED} alt="Tajweed Study" className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] relative z-10" />
+             <img src={IMG_TAJWEED} loading="lazy" alt="Tajweed Study" className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] relative z-10" />
           </div>
         </section>
 
@@ -69,7 +69,7 @@ export default function QuranProgramme() {
         <section id="fluency" className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
            <div className="order-1 relative group">
              <div className="absolute inset-0 bg-primary/10 rounded-2xl transform -translate-x-4 translate-y-4 group-hover:-translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-             <img src={IMG_FLUENCY} alt="Reading Fluency" className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] relative z-10" />
+             <img src={IMG_FLUENCY} loading="lazy" alt="Reading Fluency" className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] relative z-10" />
           </div>
           <div className="order-2 space-y-6">
             <div className="inline-block">
@@ -123,7 +123,7 @@ export default function QuranProgramme() {
           </div>
           <div className="order-1 lg:order-2 relative group">
              <div className="absolute inset-0 bg-secondary/20 rounded-2xl transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-             <img src={IMG_HIFDH} alt="Hifdh Practice" className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] relative z-10" />
+             <img src={IMG_HIFDH} loading="lazy" alt="Hifdh Practice" className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] relative z-10" />
           </div>
         </section>
       </div>

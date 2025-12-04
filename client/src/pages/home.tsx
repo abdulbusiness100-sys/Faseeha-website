@@ -232,7 +232,7 @@ export default function Home() {
       {/* Testimonials Preview */}
       <section className="py-24 relative bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
-           <img src={IMG_TESTIMONIAL_BG} alt="Background" className="w-full h-full object-cover grayscale" />
+           <img src={IMG_TESTIMONIAL_BG} alt="Background" loading="lazy" className="w-full h-full object-cover grayscale" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
