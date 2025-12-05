@@ -23,6 +23,7 @@ const SOCIALS = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setMobileMenuOpen(false);
   }, [location]);
 
   return (
@@ -104,48 +106,46 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
 
             {/* Mobile Menu */}
-            <Sheet>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-background border-l-border w-[300px]">
-                <SheetTrigger asChild>
-                  <div className="flex flex-col gap-8 mt-6">
-                    <div className="flex justify-center">
-                      <img 
-                        src={LOGO_PATH} 
-                        alt="Faseeha Institute Logo" 
-                        className="h-24 w-auto object-contain mix-blend-multiply rounded-lg" 
-                      />
-                    </div>
-                    <nav className="flex flex-col gap-4 text-center">
-                      {NAV_ITEMS.map((item) => (
-                        <Link 
-                          key={item.href} 
-                          href={item.href}
-                          className={`text-lg font-medium font-serif ${location === item.href ? "text-primary" : "text-muted-foreground"} hover:text-primary transition-colors block`}
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </nav>
-                    <div className="flex flex-col gap-4 mt-4">
-                      <Link href="/pricing">
-                        <Button className="w-full rounded-full font-serif text-lg py-6">Enrol Now</Button>
+                <div className="flex flex-col gap-8 mt-6">
+                  <div className="flex justify-center">
+                    <img 
+                      src={LOGO_PATH} 
+                      alt="Faseeha Institute Logo" 
+                      className="h-24 w-auto object-contain mix-blend-multiply rounded-lg" 
+                    />
+                  </div>
+                  <nav className="flex flex-col gap-4 text-center">
+                    {NAV_ITEMS.map((item) => (
+                      <Link 
+                        key={item.href} 
+                        href={item.href}
+                        className={`text-lg font-medium font-serif ${location === item.href ? "text-primary" : "text-muted-foreground"} hover:text-primary transition-colors block`}
+                      >
+                        {item.label}
                       </Link>
-                      <div className="flex items-center justify-center gap-6 mt-4">
-                        <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                          <Instagram className="w-6 h-6" />
-                        </a>
-                        <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
-                        </a>
-                      </div>
+                    ))}
+                  </nav>
+                  <div className="flex flex-col gap-4 mt-4">
+                    <Link href="/pricing">
+                      <Button className="w-full rounded-full font-serif text-lg py-6">Enrol Now</Button>
+                    </Link>
+                    <div className="flex items-center justify-center gap-6 mt-4">
+                      <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                        <Instagram className="w-6 h-6" />
+                      </a>
+                      <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
+                      </a>
                     </div>
                   </div>
-                </SheetTrigger>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
