@@ -30,7 +30,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-in slide-in-from-bottom-8 duration-1000 fade-in fill-mode-forwards opacity-0" style={{ animationDelay: '400ms' }}>
-            <div className="inline-flex mb-2 px-6 py-4 rounded-2xl bg-white/5 backdrop-blur-sm">
+            <div className="inline-flex mb-2 px-6 py-4 rounded-3xl bg-white/10 backdrop-blur-md border border-white/10">
               <span className="bg-secondary/90 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] shadow-lg backdrop-blur-sm">
                 For Sisters Only
               </span>
@@ -58,8 +58,11 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
-          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent mx-auto"></div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/70 flex flex-col items-center gap-2">
+          <span className="text-xs uppercase font-light tracking-widest">Scroll</span>
+          <div className="w-6 h-10 border border-white/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-2 bg-white/70 rounded-full animate-pulse"></div>
+          </div>
         </div>
       </section>
       {/* Arabic Calligraphy Divider */}
