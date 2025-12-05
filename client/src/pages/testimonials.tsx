@@ -4,11 +4,11 @@ import { Star } from "lucide-react";
 const TESTIMONIALS = [
   {
     name: "Aysha P.",
-    comment: "Alhamdulillah it was good, she is so kind & such a good teacher MashAllah. I’m sure the previous lessons were just missed as a mistake & i did also just want to say that the first lesson, she did stay on an extra hour to explain everything in detail and did the same today. So I do really appreciate it & for the missed lessons, she doesn’t need to make them up as she always goes over and beyond in each lesson 🤍"
+    comment: "Alhamdulillah it was good, she is so kind & such a good teacher MashAllah. She stayed on an extra hour in the first lesson to explain everything in detail and continues to go over and beyond in each lesson. I really appreciate her dedication and commitment to helping me succeed 🤍"
   },
   {
     name: "Azmitha C.",
-    comment: "Assalamualykum! I just wanted to provide feedback on the course. الحمدلله it’s been an amazing journey so far. My ustada Fatma is such an amazing teacher!! I look forward to our classes and really enjoy how interactive it is. My ustada is also very patient with me and so good at teaching rules etc. I’ve been trying to find a good institute/teacher to study Arabic over the last few years but الحمدلله now I’ve found Faseeha."
+    comment: "Assalamualykum! I just wanted to provide feedback on the course. الحمدلله it's been an amazing journey so far. My ustada Fatma is such an amazing teacher!! I look forward to our classes and really enjoy how interactive it is. My ustada is also very patient with me and so good at teaching rules etc. I've been trying to find a good institute/teacher to study Arabic over the last few years but الحمدلله now I've found Faseeha."
   },
   {
     name: "Nimrah K.",
@@ -16,7 +16,7 @@ const TESTIMONIALS = [
   },
   {
     name: "Matab Y.",
-    comment: "Salaam Alaykum! Alhamdulilah I had my first lesson on Sunday and it was great! It was challenging in a good way and I really enjoyed it. My instructor is very knowledgeable and knows how to reel me back in if I’m getting frustrated with myself. I really appreciate her style so far."
+    comment: "Salaam Alaykum! Alhamdulilah I had my first lesson on Sunday and it was great! It was challenging in a good way and I really enjoyed it. My instructor is very knowledgeable and knows how to reel me back in if I'm getting frustrated with myself. I really appreciate her style so far."
   },
   {
     name: "Zia H.",
@@ -24,7 +24,7 @@ const TESTIMONIALS = [
   },
   {
     name: "Aliyah K.",
-    comment: "The Arabic course is amazing it’s not just learning Arabic but it’s also stories and all. May Allah always grant u success in this business. It’s really helping a lot of women out there ❤️"
+    comment: "The Arabic course is amazing it's not just learning Arabic but it's also stories and all. May Allah always grant u success in this business. It's really helping a lot of women out there ❤️"
   },
   {
     name: "Hiba S.",
@@ -36,15 +36,15 @@ const TESTIMONIALS = [
   },
   {
     name: "Tanwira A.",
-    comment: "I've really enjoyed the way Amira explains the hadiths we learn each lesson and the way to reiterates all of the important rules recapping previous ones when relevant. I genuinely can’t think of any improvement points for Amira, she’s so lovely, has lots of energy, really patient and a great teacher!"
+    comment: "I've really enjoyed the way Amira explains the hadiths we learn each lesson and the way to reiterates all of the important rules recapping previous ones when relevant. I genuinely can't think of any improvement points for Amira, she's so lovely, has lots of energy, really patient and a great teacher!"
   },
   {
     name: "Hamda O.",
-    comment: "One thing I enjoyed about this program is the Clear explanations and structured progression. I’ve learned a lot from ustadah Shayma. She makes the class engaging, and I really appreciate her patience and constructive feedback. Concepts are explained step-by-step with a logical progression."
+    comment: "One thing I enjoyed about this program is the Clear explanations and structured progression. I've learned a lot from ustadah Shayma. She makes the class engaging, and I really appreciate her patience and constructive feedback. Concepts are explained step-by-step with a logical progression."
   },
   {
     name: "Ruqayyah A.",
-    comment: "Salaam, I’ve really enjoyed this program — it’s honestly been the best Arabic course and teacher I’ve had so far. I feel like I’ve been able to gain a much deeper understanding of the Arabic language, and I truly appreciate how patient my teacher is with me, especially since I have ADHD and my mind can wander at times. The pace of the lessons has also been great — steady and supportive without feeling rushed."
+    comment: "Salaam, I've really enjoyed this program — it's honestly been the best Arabic course and teacher I've had so far. I feel like I've been able to gain a much deeper understanding of the Arabic language, and I truly appreciate how patient my teacher is with me, especially since I have ADHD and my mind can wander at times. The pace of the lessons has also been great — steady and supportive without feeling rushed."
   }
 ];
 
@@ -55,7 +55,7 @@ export default function Testimonials() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif text-primary mb-6">Student Success Stories</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Hear from sisters who have transformed their relationship with the Qur’an and Arabic language through Faseeha Institute.
+            Hear from sisters who have transformed their relationship with the Qur'an and Arabic language through Faseeha Institute.
           </p>
         </div>
 
