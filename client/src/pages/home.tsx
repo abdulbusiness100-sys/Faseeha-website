@@ -183,52 +183,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* How It Works */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-serif text-primary">How Learning Works</h2>
-          </div>
-
-          <div className="relative max-w-5xl mx-auto">
-            {/* Line connecting steps on desktop */}
-            <div className="hidden lg:block absolute top-12 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-0"></div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
-              {[
-                {
-                  step: "01",
-                  title: "Enrol Online",
-                  text: "Choose your programme and submit details. We accommodate all time zones."
-                },
-                {
-                  step: "02",
-                  title: "Assessment",
-                  text: "Your teacher assesses your current level and clarifies your unique goals."
-                },
-                {
-                  step: "03",
-                  title: "Personalised Plan",
-                  text: "We agree on a schedule and milestones for tajweed, fluency, or Arabic."
-                },
-                {
-                  step: "04",
-                  title: "Start Journey",
-                  text: "Begin your 1-on-1 classes, track progress, and join our sisterhood."
-                }
-              ].map((item, i) => (
-                <div key={i} className="text-center group">
-                  <div className="w-24 h-24 rounded-full bg-background border-4 border-secondary/20 flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:border-secondary transition-colors duration-500 relative z-10">
-                    <span className="font-serif text-3xl text-primary font-bold">{item.step}</span>
-                  </div>
-                  <h3 className="text-xl font-serif font-bold mb-3 text-primary">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px] mx-auto">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Testimonials Preview */}
       <section className="py-24 relative bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
