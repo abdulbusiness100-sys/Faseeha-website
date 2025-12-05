@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden rounded-3xl mx-4 my-4">
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden rounded-3xl mx-4">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
            <img 
@@ -65,8 +65,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-        </div>
-      </div>
       {/* Arabic Calligraphy Divider */}
       <div className="bg-background py-8 overflow-hidden relative">
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
