@@ -30,7 +30,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-in slide-in-from-bottom-8 duration-1000 fade-in fill-mode-forwards opacity-0" style={{ animationDelay: '400ms' }}>
-            <div className="inline-block mb-2">
+            <div className="inline-flex mb-2 px-6 py-4 rounded-2xl bg-white/5 backdrop-blur-sm">
               <span className="bg-secondary/90 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] shadow-lg backdrop-blur-sm">
                 For Sisters Only
               </span>
