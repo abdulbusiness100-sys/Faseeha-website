@@ -15,17 +15,17 @@ export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden rounded-3xl mx-4">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
            <img 
              src={IMG_HERO_BG} 
              alt="Muslim woman studying online" 
-             className="w-full h-full object-cover object-center opacity-0 animate-in fade-in duration-1000 fill-mode-forwards rounded-3xl"
+             className="w-full h-full object-cover object-center opacity-0 animate-in fade-in duration-1000 fill-mode-forwards"
              style={{ animationDelay: '200ms' }}
            />
-           <div className="absolute inset-0 bg-primary/40 mix-blend-multiply rounded-3xl"></div>
-           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent rounded-3xl"></div>
+           <div className="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
