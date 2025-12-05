@@ -5,7 +5,7 @@ import { MessageCircle, BookOpen } from "lucide-react";
 
 const IMG_ARABIC_HERO = "/Screenshot 2025-01-21 at 15.00.11_1764706859835.png";
 const IMG_LEVEL_PATH = "/4_1764706859836.png";
-const IMG_SPEAKING = "/2_1764706859836.png";
+const IMG_SPEAKING = "/Screenshot_2025-01-04_at_19.50.36_1764972256007.png";
 
 export default function ArabicProgramme() {
   return (
