@@ -38,7 +38,6 @@ export default function QuranProgramme() {
         <section id="tajweed" className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 space-y-6">
             <div className="inline-block">
-               <span className="text-6xl text-secondary/20 font-serif font-bold absolute -translate-y-8 -translate-x-4 z-0">01</span>
                <h2 className="text-4xl md:text-5xl font-serif text-primary mb-4 relative z-10">Tajweed Mastery</h2>
             </div>
             <p className="text-xl text-muted-foreground leading-relaxed font-light border-l-4 border-secondary pl-6 py-2">
@@ -73,7 +72,6 @@ export default function QuranProgramme() {
           </div>
           <div className="order-2 space-y-6">
             <div className="inline-block">
-               <span className="text-6xl text-primary/10 font-serif font-bold absolute -translate-y-8 -translate-x-4 z-0">02</span>
                <h2 className="text-4xl md:text-5xl font-serif text-primary mb-4 relative z-10">Reading Fluency</h2>
             </div>
             <p className="text-xl text-muted-foreground leading-relaxed font-light border-l-4 border-primary/30 pl-6 py-2">
@@ -100,7 +98,6 @@ export default function QuranProgramme() {
         <section id="hifdh" className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 space-y-6">
             <div className="inline-block">
-               <span className="text-6xl text-secondary/20 font-serif font-bold absolute -translate-y-8 -translate-x-4 z-0">03</span>
                <h2 className="text-4xl md:text-5xl font-serif text-primary mb-4 relative z-10">Hifdh & Revision</h2>
             </div>
              <p className="text-xl text-muted-foreground leading-relaxed font-light border-l-4 border-secondary pl-6 py-2">
