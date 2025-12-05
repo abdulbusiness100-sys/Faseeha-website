@@ -38,7 +38,7 @@ const JOURNEY_STEPS = [
     step: "02",
     emoji: "🤝",
     title: "Teacher Matching",
-    text: "We carefully match you with the perfect teacher based on your goals, time zone, and learning style. You'll be introduced via email within 48 hours.",
+    text: "You're matched with a teacher based on your time zone and availability. You'll be introduced via email within 48 hours.",
     icon: null,
     iconColor: ""
   },
