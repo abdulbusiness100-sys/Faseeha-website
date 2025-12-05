@@ -52,7 +52,7 @@ export default function ArabicProgramme() {
               {
                 level: "02",
                 title: "Core Arabic",
-                desc: "Talk about family, daily routine, time, weather, health and worship. Read short ayaat and hadith that use your vocabulary.",
+                desc: "Talk about family, daily routine, time, weather, health and worship. Read short hadiths that use your vocabulary.",
                 color: "bg-primary/10"
               },
               {
