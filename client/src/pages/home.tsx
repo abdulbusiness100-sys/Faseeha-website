@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight, Check, Star, PlayCircle } from "lucide-react";
 
 // Image Paths
-const IMG_HERO_BG = "/Screenshot 2025-01-04 at 19.29.25_1764706859835.png";
+const IMG_HERO_BG = "/Untitled_design_1764980136329.png";
 const IMG_QURAN_SECTION = "/Screenshot 2025-01-22 at 16.07.01_1764706859836.png";
 const IMG_ARABIC_SECTION = "/Screenshot 2025-01-04 at 19.58.00_1764706859836.png";
 const IMG_TESTIMONIAL_BG = "/Screenshot 2025-01-04 at 19.50.36_1764706859835.png";
@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden rounded-3xl mx-4">
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
            <img 
              src={IMG_HERO_BG} 
              alt="Muslim woman studying online" 
