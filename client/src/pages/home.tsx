@@ -53,14 +53,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-primary/70 flex flex-col items-center gap-2">
-          <span className="text-xs uppercase font-light tracking-widest">Scroll</span>
-          <div className="w-6 h-10 border border-primary/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-primary/70 rounded-full animate-pulse"></div>
-          </div>
-        </div>
       </section>
       {/* Arabic Calligraphy Divider */}
       <div className="bg-background py-8 overflow-hidden relative">
