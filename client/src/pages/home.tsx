@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-primary">
-        {/* Logo Watermark with White Fade */}
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-background">
+        {/* Logo Watermark */}
         <div className="absolute inset-0 opacity-15">
           <img 
             src={IMG_HERO_BG} 
@@ -27,15 +27,15 @@ export default function Home() {
         
         <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-in slide-in-from-bottom-8 duration-1000 fade-in fill-mode-forwards opacity-0" style={{ animationDelay: '400ms' }}>
-            <div className="inline-flex mb-2 px-6 py-4 rounded-3xl bg-white/10 backdrop-blur-md border border-white/10">
+            <div className="inline-flex mb-2 px-6 py-4 rounded-3xl bg-primary/10 backdrop-blur-md border border-primary/20">
               <span className="bg-secondary/90 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] shadow-lg backdrop-blur-sm">
                 For Sisters Only
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium text-white leading-tight drop-shadow-md">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium text-primary leading-tight drop-shadow-md">
               Start your <span className="italic font-arabic px-2">Faseeha</span> <br/> Journey Today
             </h1>
-            <p className="text-lg md:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-sm font-light">
+            <p className="text-lg md:text-2xl text-primary/80 leading-relaxed max-w-2xl mx-auto drop-shadow-sm font-light">
               Connect with the Qur’an and Arabic language through structured, women-only classes taught by native experts.
             </p>
             
@@ -46,7 +46,7 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href="/about">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-lg h-14 px-10 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-300 font-serif">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-lg h-14 px-10 border-primary/30 bg-primary/10 text-primary backdrop-blur-sm hover:bg-primary hover:text-white transition-all duration-300 font-serif">
                   Learn More
                 </Button>
               </Link>
@@ -55,10 +55,10 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/70 flex flex-col items-center gap-2">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-primary/70 flex flex-col items-center gap-2">
           <span className="text-xs uppercase font-light tracking-widest">Scroll</span>
-          <div className="w-6 h-10 border border-white/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-white/70 rounded-full animate-pulse"></div>
+          <div className="w-6 h-10 border border-primary/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-2 bg-primary/70 rounded-full animate-pulse"></div>
           </div>
         </div>
       </section>
