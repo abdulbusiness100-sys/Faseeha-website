@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.15">
+    <!-- Dark outline of Arabic calligraphy -->
+    <path d="M150 200Q150 150 200 150Q250 150 250 200Q250 250 200 250Q150 250 150 200Z" fill="none" stroke="#3d3d3d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M180 180L220 220M220 180L180 220" fill="none" stroke="#3d3d3d" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="160" cy="160" r="8" fill="#3d3d3d"/>
+    <circle cx="170" cy="155" r="6" fill="#3d3d3d"/>
+  </g>
+</svg>
