@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white/5 to-primary">
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-primary">
         {/* Logo Watermark with White Fade */}
         <div className="absolute inset-0 opacity-15">
           <img 
