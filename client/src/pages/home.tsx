@@ -15,7 +15,16 @@ export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-primary">
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white/5 to-primary">
+        {/* Logo Watermark with White Fade */}
+        <div className="absolute inset-0 opacity-15">
+          <img 
+            src={IMG_HERO_BG} 
+            alt="Faseeha Institute Logo" 
+            className="w-full h-full object-contain object-center"
+          />
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10 pt-20 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-in slide-in-from-bottom-8 duration-1000 fade-in fill-mode-forwards opacity-0" style={{ animationDelay: '400ms' }}>
             <div className="inline-flex mb-2 px-6 py-4 rounded-3xl bg-white/10 backdrop-blur-md border border-white/10">
